@@ -1,0 +1,326 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*整体和背景*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: gray;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+#toggle-music {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  padding: 2px 4px;
+  border: silver solid 2px;
+  background-color: silver;
+  border-radius: 12px;
+  color: white;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+main {
+  flex: 1;
+  /* background-color: rgb(101, 101, 101); */
+}
+
+/*导航栏*/
+nav {
+  background-color: rgba(2, 254, 205, 0.7);
+  position: fixed; /*固定在顶部*/
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  padding: 8px 4px;
+}
+nav li a {
+  font-size: 0.8em;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  padding: 2px 6px;
+  border: 2px solid white;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+  background-color: rgba(2, 254, 205, 0.9);
+
+  z-index: 1;
+}
+nav li a:hover {
+  background-color: rgb(3, 165, 133);
+  border-radius: 8px;
+}
+.menu-toggle {
+  display: none;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background-color: rgba(3, 165, 133, 80%);
+  border-radius: 8px;
+  position: absolute;
+  cursor: pointer;
+  top: 4px;
+  left: 8px;
+  padding: 2px 5px;
+  z-index: 1;
+}
+
+/*欢迎页面*/
+.welcome-section {
+  width: 100%;
+  height: 100%;
+}
+
+.welcomeimg {
+  width: 100%;
+  height: 650px;
+  background-color: black;
+  z-index: 0;
+}
+/*欢迎界面图形，还是算了吧，简洁点
+.welcomeimg1 {
+  width: 55%;
+  height: 32%;
+  background-color: rgba(2, 254, 205, 0.29);
+  filter: blur(3px);
+  z-index: 0;
+  position: absolute;
+  top: 48%;
+  left: 26%;
+}
+.welcomeimg2 {
+  width: 45%;
+  height: 65%;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.18);
+  filter: blur(9px);
+  z-index: 0;
+  position: absolute;
+  top: 21%;
+  left: 13%;
+}
+*/
+
+h1 {
+  color: white;
+  text-align: center;
+  padding-top: 20%;
+  font-size: 4em;
+  z-index: 2;
+  filter: blur(3px);
+}
+h1:hover {
+  filter: blur(0px);
+  cursor: url("photo/285639_heart_icon.png"), auto;
+}
+
+/*纸上的部分*/
+.gallery {
+  display: flex;
+  overflow: center;
+  flex-wrap: wrap;
+  /* padding-left: 30px; */
+  background-color: rgb(101, 101, 101);
+  width: 100%;
+  padding: 20px;
+  /* position: relative; */
+  justify-content: center;
+  align-items: center;
+}
+.painting-imgs {
+  display: flex;
+  justify-content: center;
+}
+.painting-gif {
+  /* width: 100%; */
+  max-width: 900px;
+  justify-content: space-around;
+  margin: 10px 10px; /* gif动图 */
+  position: absolute;
+  animation: float 3s infinite alternate;
+}
+@keyframes float {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(15%, 35%);
+  }
+  75% {
+    transform: translate(45%, 45%);
+  }
+  100% {
+    transform: translate(100px, 100px);
+  }
+}
+.gallery img {
+  width: 100%;
+  justify-content: space-around;
+  max-width: 30%; /* 设置每张图片的最大宽度 */
+  margin: 10px 10px; /* 图片之间的间距 */
+  height: 100%;
+}
+.painting-title {
+  color: white;
+  font-size: 1em;
+  text-align: start;
+  max-width: 200px;
+  margin: 10px;
+  border: 2px solid white;
+  border-radius: 8px;
+  padding: 2px;
+  z-index: 1;
+}
+
+/*try*/
+/* .container > div {
+  text-align: center;
+  scroll-snap-align: center;
+  flex: none;
+}
+.x.mandatory-scroll-snapping {
+  scroll-snap-type: x mandatory;
+}
+.x.mandatory-scroll-snapping img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+} */
+.carousel-container {
+  width: 100%;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  display: flex;
+  justify-content: center; /* 水平居中 */
+}
+
+.carousel {
+  display: flex;
+  gap: 20px; /* 图片之间的间距 */
+  padding: 20px 0; /* 上下添加一些内边距 */
+}
+
+.carousel img {
+  width: 70vw; /* 图片宽度为视口宽度的80% */
+  height: auto;
+  scroll-snap-align: center;
+  flex-shrink: 0; /* 防止图片被压缩 */
+}
+
+/* 隐藏滚动条但保留功能 */
+/* .carousel-container::-webkit-scrollbar {
+  display: none;
+} */
+/* .carousel-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+} */
+/*try*/
+
+a {
+  color: white;
+  text-align: center;
+  font-size: 1em;
+  margin: 0 auto;
+  /* position: relative; */
+  z-index: 1;
+}
+
+/*媒体查询以下*/
+@media (max-width: 768px) {
+  /* nav {
+    width: 60%;
+    position: absolute;
+  } */
+  nav ul {
+    flex-direction: column;
+    display: none;
+    width: 100%;
+    text-align: center;
+    align-items: flex-start;
+    position: relative;
+    padding-top: 40px;
+    padding-left: 50px;
+    padding-bottom: 10px;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  nav ul.show {
+    display: flex;
+  }
+  nav ul li {
+    width: auto;
+    padding: 2px 0;
+    justify-content: flex-start;
+  }
+  nav ul li a {
+    display: block;
+    width: 100%;
+    padding: 2px 4px;
+  }
+
+  .welcomeimg {
+    width: 100%;
+    height: 300px;
+    background-color: black;
+    z-index: 0;
+  }
+  /* .welcomeimg1 {
+    width: 62%;
+    height: 19%;
+    background-color: rgba(2, 254, 205, 0.27);
+    filter: blur(4px);
+    z-index: 0;
+    position: absolute;
+    top: 21%;
+    left: 28%;
+  }
+  .welcomeimg2 {
+    width: 50%;
+    height: 40%;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.18);
+    filter: blur(8px);
+    z-index: 0;
+    position: absolute;
+    top: 3%;
+    left: 15%;
+  } */
+  h1 {
+    padding-top: 20%;
+    font-size: 3em;
+    filter: blur(1.6px);
+  }
+}
+/*媒体查询以上*/

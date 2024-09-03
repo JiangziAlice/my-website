@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!--导航栏部分-->
+      <nav>
+        <button class="menu-toggle">menu</button>
+        <ul>
+          <li><a href="#welcome-section">Home</a></li>
+          <li><a href="#paper-painting">Painting on Paper</a></li>
+          <li><a href="#flat-painting">Flat Painting</a></li>
+          <li><a href="#design">Design Art</a></li>
+          <li>
+            <a href="#photography-modeling">Photography and Modeling</a>
+          </li>
+          <li><a href="#social-media">Find Me</a></li>
+        </ul>
+      </nav>
+      <audio id="background-music" autoplay loop>
+        <source src="photo/dubstep9.2.mp3" type="audio/mpeg" />
+        您的浏览器不支持音频元素。
+      </audio>
+      <button id="toggle-music">play</button>
+
+      <script>
+        const audio = document.getElementById("background-music");
+        const button = document.getElementById("toggle-music");
+
+        button.addEventListener("click", () => {
+          if (audio.paused) {
+            audio.play();
+            button.textContent = "stop";
+          } else {
+            audio.pause();
+            button.textContent = "play";
+          }
+        });
+      </script>
+
+      <main class="main">
+        <script>
+          // 导航栏部分
+          const menuToggle = document.querySelector(".menu-toggle");
+          const nav = document.querySelector("nav ul");
+
+          menuToggle.addEventListener("click", () => {
+            nav.classList.toggle("show");
+          });
+        </script>
+        <!--欢迎部分+介绍（放个炫酷的主视觉背景图）-->
+        <div id="welcome-section">
+          <div class="welcomeimg">
+            <h1>Welcome to My Personal Portfolio</h1>
+            <!-- <div class="welcomeimg1"></div>
+            <div class="welcomeimg2"></div> -->
+          </div>
+        </div>
+        <!--主页面-->
+        <!--纸上绘画，平铺-->
+        <div id="paper-painting" class="painting">
+          <div class="gallery">
+            <div class="painting-title">Painting on Paper</div>
+            <div class="painting-imgs">
+              <img
+                src="photo/微信图片_20240902154154.jpg"
+                alt="Painting on Paper"
+              />
+              <img
+                src="photo/微信图片_20240902154201.jpg"
+                alt="Painting on Paper"
+              />
+              <img
+                src="photo/微信图片_20240902154140.jpg"
+                alt="Painting on Paper"
+              />
+            </div>
+          </div>
+        </div>
+        <!--电子绘画，平铺+浮动-->
+        <div id="flat-painting" class="painting">
+          <div class="gallery">
+            <div class="painting-title">Flat Painting</div>
+            <div class="painting-imgs">
+              <img src="photo/1.png" alt="flat-painting" />
+              <img src="photo/2.png" alt="flat-painting" />
+              <img src="photo/8.png" alt="flat-painting" />
+            </div>
+            <div class="painting-imgs">
+              <img src="photo/5.png" alt="flat-painting" />
+              <img src="photo/3.png" alt="flat-painting" />
+              <img src="photo/6.png" alt="flat-painting" />
+            </div>
+            <div class="painting-imgs">
+              <img src="photo/d.png" alt="flat-painting" />
+              <img src="photo/0918.png" alt="flat-painting" />
+              <img src="photo/0733.png" alt="flat-painting" />
+            </div>
+            <div class="painting-gif">
+              <img src="photo/GIF.gif" alt="flat-painting" />
+            </div>
+          </div>
+        </div>
+        <script>
+          const image = document.querySelector(".painting-gif");
+          const background = document.querySelector(".gallery");
+          function randomPosition() {
+            const x =
+              Math.random() * (background.clientWidth - image.clientWidth);
+            const y =
+              Math.random() * (background.clientHeight - image.clientHeight);
+            image.style.transform = `translate(${x}px, ${y}px)`;
+          }
+          setInterval(randomPosition, 2000); // 每2秒随机移动一次
+        </script>
+        <!--各种设计，滚动-->
+        <div id="design" class="painting">
+          <div class="gallery">
+            <div class="painting-title">Design Art</div>
+            <div class="painting-imgs">
+              <!-- <div class="container x mandatory-scroll-snapping" dir="ltr"> -->
+              <img src="photo/fvghb.png" alt="design" />
+              <img src="photo/cvh.png" alt="design" />
+              <img src="photo/fhdf.png" alt="design" />
+            </div>
+            <div class="painting-imgs">
+              <img src="photo/egrd.png" alt="design" />
+              <img src="photo/jhfu.png" alt="design" />
+              <img src="photo/hgig.png" alt="design" />
+            </div>
+          </div>
+        </div>
+        <!--摄影和模特，滚动-->
+        <div id="photography-modeling" class="painting">
+          <div class="gallery">
+            <div class="painting-title">Photography Modeling</div>
+            <div class="painting-imgs">
+              <img
+                src="photo/微信图片_20240902154154.jpg"
+                alt="Painting on Paper"
+              />
+              <img
+                src="photo/微信图片_20240902154201.jpg"
+                alt="Painting on Paper"
+              />
+              <img
+                src="photo/微信图片_20240902154140.jpg"
+                alt="Painting on Paper"
+              />
+            </div>
+          </div>
+        </div>
+        <!--各种媒体社交平台链接-->
+        <div class="social-medias" id="social-media">
+          <a href="">GitHub</a>
+          <a href="">RedBook</a>
+          <a href="">Instagram</a>
+          <a href="mailto:1572872012@qq.com">Email</a>
+        </div>
+
+        <div class="carousel-container">
+          <div class="carousel">
+            <img src="photo/cvh.png" alt="Image 1" />
+            <img src="photo/cvh.png" alt="Image 2" />
+            <img src="photo/cvh.png" alt="Image 3" />
+          </div>
+        </div>
+      </main>
+      <!--页脚-->
+      <footer>
+        <!-- 页脚内容 -->
+      </footer>
+
+      <div class="content">
+        <h2>内容区域mnnhjj</h2>
+        <p>这里是一些内容...</p>
+        <p>滚动页面查看效果...</p>
+        <p>更多内容...</p>
+        <p>更多内容...</p>
+        <p>更多内容...</p>
+        <p>更多内容...</p>
+        <p>更多内容...</p>
+        <p>更多内容...</p>
+        <p>更多内容...</p>
+        <p>更多内容...</p>
+        <p>更多内容...</p>
+        <p>更多内容...</p>
+        <p>更多内容...</p>
+      </div>
+    </div>
+  </body>
+</html>
