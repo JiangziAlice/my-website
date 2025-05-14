@@ -27,7 +27,7 @@ body {
 #toggle-music {
   position: fixed;
   right: 10px;
-  top: 41px;
+  top: 40px;
   padding: 2px 4px;
   border: silver solid 2px;
   background-color: silver;
@@ -134,11 +134,12 @@ nav li a:hover {
 h1 {
   color: white;
   text-align: center;
-  padding-top: 18%;
+  padding-top: 15%;
   font-size: 4em;
   z-index: 2;
   filter: blur(3px);
-  padding: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 h1:hover {
   filter: blur(0px);
