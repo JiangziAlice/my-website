@@ -1,121 +1,62 @@
 import { motion } from 'framer-motion'
-import { Mail, Github, Instagram, Twitter, Heart } from 'lucide-react'
 
 const Footer = () => {
-  const socialLinks = [
-    { icon: Mail, href: 'mailto:yezhi@example.com', label: 'Email' },
-    { icon: Github, href: 'https://github.com/yezhi', label: 'GitHub' },
-    { icon: Instagram, href: 'https://instagram.com/yezhi.art', label: 'Instagram' },
-    { icon: Twitter, href: 'https://twitter.com/yezhi_art', label: 'Twitter' }
-  ]
-
   return (
-    <footer id="find-me" className="bg-muted/50 border-t border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer id="social-media" className="bg-gray-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="text-center space-y-8">
           
-          {/* Brand Section */}
+          {/* Social Media Links */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="space-y-4"
+            className="space-y-6"
           >
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent"
-            >
-              YeZhi
+            <h3 className="text-2xl font-bold text-white">
+              联系我
             </h3>
-            <p className="text-muted-foreground max-w-sm"
-            >
-              Visual artist and designer exploring the intersection of traditional art and digital innovation.
-            </p>
-            <div className="flex space-x-4"
-            >
-              {socialLinks.map((social) => (
-                <motion.a
-                  key={social.label}
-                  href={social.href}
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  whileTap={{ scale: 0.9 }}
-                  className="p-2 rounded-lg bg-secondary/50 hover:bg-secondary transition-colors group"
-                  aria-label={social.label}
-                >
-                  <social.icon className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
-                </motion.a>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Quick Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            viewport={{ once: true }}
-            className="space-y-4"
-          >
-            <h4 className="font-semibold text-foreground">Quick Links</h4>
-            <nav className="space-y-2"
-            >
-              {[
-                { name: 'Home', href: '#home' },
-                { name: 'Paintings', href: '#paper-paintings' },
-                { name: 'Digital Art', href: '#flat-paintings' },
-                { name: 'Design Work', href: '#design-art' },
-                { name: 'Photography', href: '#photography' }
-              ].map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={(e) => {
-                    e.preventDefault()
-                    document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' })
-                  }}
-                  className="block text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  {link.name}
-                </a>
-              ))}
-            </nav>
-          </motion.div>
-
-          {/* Contact Info */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="space-y-4"
-          >
-            <h4 className="font-semibold text-foreground">Get in Touch</h4>
-            <div className="space-y-2"
+            <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12"
             >
               <a
-                href="mailto:yezhi@example.com"
-                className="block text-muted-foreground hover:text-foreground transition-colors"
+                href="https://github.com/JiangziAlice"
+                className="text-teal-400 font-bold text-lg hover:text-teal-300 transition-colors"
               >
-                yezhi@example.com
+                GitHub
               </a>
-              <p className="text-muted-foreground">
-                Available for commissions and collaborations
-              </p>
+              <a
+                href="https://www.xiaohongshu.com/user/profile/5997f3335e87e74eed2bb164?xhsshare=CopyLink&appuid=5997f3335e87e74eed2bb164&apptime=1725364495&share_id=c0770c6d3b6445a8aacb0807b0991e60"
+                className="text-teal-400 font-bold text-lg hover:text-teal-300 transition-colors"
+              >
+                小红书
+              </a>
+              <a
+                href="https://www.instagram.com/dobetteryz?igsh=MW9pc3lndmdsZmxwNw%3D%3D&utm_source=qr"
+                className="text-teal-400 font-bold text-lg hover:text-teal-300 transition-colors"
+              >
+                Instagram
+              </a>
+              <a
+                href="mailto:1572872012@qq.com"
+                className="text-teal-400 font-bold text-lg hover:text-teal-300 transition-colors"
+              >
+                Email: 1572872012@qq.com
+              </a>
             </div>
           </motion.div>
         </div>
 
-        <div className="border-t border-border mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0"
+        <div className="border-t border-gray-700 mt-12 pt-8">
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center text-white text-sm"
           >
-            <p className="text-muted-foreground text-sm flex items-center"
-            >
-              Made with <Heart className="w-4 h-4 mx-1 text-red-500 fill-red-500" /> by YeZhi
-            </p>
-            <p className="text-muted-foreground text-sm"
-            >
-              © {new Date().getFullYear()} YeZhi. All rights reserved.
-            </p>
-          </div>
+            © 2024 Ye Zi. All rights reserved.
+          </motion.p>
         </div>
       </div>
     </footer>
